@@ -1,22 +1,19 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby "2.2.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: [:development, :test]
-# use Postgres as database in production
-gem 'pg', '~> 0.18.4', group: :production
-#add 12factor for heroku
-gem 'rails_12factor', group: :production
+
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
@@ -28,8 +25,53 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-#Materialize CSS Gem
+#Added during Code4Startup Lesson
+
+# Google Materialize SASS / CSS Framework
 gem 'materialize-sass'
+
+gem 'font-awesome-rails', '~> 4.3.0.0'
+
+# Authentication
+gem 'devise', '~> 3.4.1'
+
+#Another new gem
+gem 'toastr-rails'
+
+#mandrill app
+gem 'mandrill-api', require: 'mandrill'
+
+#social authentication
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+
+#activeadmin
+gem 'activeadmin', github: 'activeadmin'
+gem 'active_skin'
+gem 'active_admin-sortable_tree', '~>0.2.1'
+
+#paperclip
+gem 'paperclip', '~> 4.2.1'
+
+#Friendly id - clean URLS
+gem 'friendly_id'
+
+#markdown
+gem 'redcarpet', '~> 3.2.3'
+gem 'coderay', '~> 1.1.0' 
+
+#Stripe Checkout
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+#Figaro
+gem 'figaro', '~> 1.1.1'
+
+#exception notifier
+gem 'rollbar', '~> 1.5.3'
+
+gem 'rails_12factor', '~> 0.0.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -43,9 +85,7 @@ gem 'materialize-sass'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-end
 
-group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
